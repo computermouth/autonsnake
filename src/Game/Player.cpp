@@ -70,6 +70,47 @@ void Player::update(Board* board)
 		break;
 	};
 
+	// Retain snake's last horizontal direction
+	static Player::Direction previousDirection = this->currentDirection;
+	
+	// Get position in map
+	int x = this->Player::getX();
+	int y = this->Player::getY();
+
+	if(x == 1 && y == 2){
+		
+		this->nextDirection = Player::RIGHT; // turns right at top left
+		previousDirection = Player::RIGHT;   // update previous h-dir
+		
+	}else if(x == 76 && y == 2){
+		
+		this->nextDirection = Player::LEFT; // turns left at top right
+		previousDirection = Player::LEFT;
+		
+	}else if(x == 2 && y == 19 && this->currentDirection == Player::LEFT){
+		
+		this->nextDirection = Player::UP; // turns up at bottom left
+		
+	}else if(x == 75 && y == 19 && this->currentDirection == Player::RIGHT){
+		
+		this->nextDirection = Player::UP; // turns up at bottom right
+		
+	}else if(this->currentDirection == Player::DOWN && 
+		previousDirection == Player::RIGHT){
+			
+		this->nextDirection = Player::LEFT; // if snake was heading right and turned down
+		previousDirection = Player::LEFT;   // go left now
+	}else if(this->currentDirection == Player::DOWN && 
+		previousDirection == Player::LEFT){
+			
+		this->nextDirection = Player::RIGHT; // if snake was heading left and turned down
+		previousDirection = Player::RIGHT;   // go right now
+	}else if((x == 3 && this->currentDirection == Player::LEFT && y != 19)||
+		(x == 74 && this->currentDirection == Player::RIGHT && y != 19)){
+		
+		this->nextDirection = Player::DOWN;  // move down if you hit an edge horizontally
+	}
+
 	// Making the rest of the body catch up
 	for (unsigned int i = (this->body.size() - 1); i > 0; i--)
 	{
