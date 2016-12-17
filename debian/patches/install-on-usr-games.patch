@@ -1,0 +1,14 @@
+Description: Install binary on /usr/games instead of /usr/bin.
+Author: Alexandre Dantas <eu@alexdantas.net>
+Last-Update: 2014-07-31
+--- a/Makefile
++++ b/Makefile
+@@ -45,7 +45,7 @@
+ PREFIX      = /usr
+ EXEC_PREFIX = $(PREFIX)
+ DATAROOTDIR = $(PREFIX)/share
+-BINDIR      = $(EXEC_PREFIX)/bin
++BINDIR      = $(EXEC_PREFIX)/games
+ 
+ # Misc stuff
+ PNGDIR     = $(DATAROOTDIR)/icons/hicolor

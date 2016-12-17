@@ -1,0 +1,116 @@
+07-28-2014 v3.0.0
+	* Gameplay: Levels! Now you can make your own maps and mazes
+	            that the snake will play on. As expected, each
+	            level has it's own score count.
+	* Gameplay: Made possible for the game levels to scroll.
+	            Now you can set the game map to move on all
+	            4 directions under a configurable speed.
+	* Interface: Made subtle changes on the GUI; specially on
+	             the text dialogs and menu items.
+	* Development: Rewrote score files format from scratch.
+	               It is now way more extensible; way better than
+	               a mere binary blob.
+	* Development: Tons and tons of bug fixes. Namely random
+	               game crashes.
+	* Interface: Game now ships with menu and icon files. It
+	             gets installed in a way that shows nSnake on
+	             the menus of most Linux distributions.
+
+05-29-2014 v2.0.5
+	* Development: Completely removed any C++11 features from the
+	               codebase. Game is now portable across old
+	               compilers.
+	* Bug: Fixed level-generating bug that made the player
+	       unable to move at all.
+	* Development: Instead of providing `iniparser` we rely on
+	               the user having it installed on the system.
+
+03-06-2014 v2.0.0
+	* Development: Completely rewrote the game in C++, using brand
+	               new C++11 features!
+	* Interface: Main menu has a cute Matrix-like animation.
+	* Interface: GUI-like menus and buttons and widgets and much more.
+	* Gameplay: Made input keys customizable.
+	* Gameplay: Game profiles - high scores are made in a
+	            player-by-player basis.
+
+08-08-2013 v1.7
+	* Abandoned: nsnake is now deprecated in favor of "nsnake++",
+	             the new master branch on git.
+	             The old version will still be kept on the
+	             "nsnake-classic" branch.
+
+05-14-2013 v1.7
+	* Development: High-score file stays on the user's home directory.
+	* Gameplay: vim-like control keys (hjkl).
+	* Interface: support for terminals that doesn't have colors.
+	* Bug: fixed minor issues on man page and makefile; see AUTHORS file.
+	* Gameplay: Smoothed gameplay and screen refresh controls.
+	* Development: now using Git for version control.
+
+11-01-2012 v1.5
+	* Development:  Now nsnake uses GNU getopt_long!
+	                See files arguments.c/.h for info.
+	* Development: The main documentation page has a separate file now.
+	* Development: Cleaned a lot the source files and reformatted pretty
+	               much everything.
+	* Development: Created manpage! Get help with nsnake will be as easy
+	               as 'man nsnake'.
+	* Bug: Fixed another Highscore bug; fully functional now.
+	* Development: scores.c/.h now is hscores.c/.h
+	* Development: Now nsnake saves it's high scores in /var/games!
+	               And it now runs at setgid root:games.
+
+12-04-2011 v1.3
+	* Added: arrow keys control over the speed levels at the main menu.
+	* Added: Clean the screen when the user quits the game.
+	* Separated the installation info from README to INSTALL
+	* Fixed: Major memory leaks!
+	* Cleaned the source code: function names now begin with the name of the
+	                           module in which they are made.
+	* Successfuly documented every function, variable and data structure on
+	  the whole source code. Speaking of this, when you type 'make dox', it
+	  creates a link to the whole documentation under /doc.
+	* Changed: No mode 'Normal Mode' or 'Teleport mode'. It's now 'Borders
+	           On' and 'Borders Off'
+	* Added: Option to return to main menu at the Game Over screen.
+	* Added: Commandline option to display the GPLv3 preamble and Warranty
+	         informations.
+
+11-24-2011 v1.0
+	* Interface: Now the main menu is prettier than ever! Also
+	             the teleport mode!
+	* Gameplay: Added speed levels! Now the user can select which
+	            level will the game start on the main menu
+	* Bug: Bug that allowed the snake to go offscreen.
+	* Bug: Bug that allowed a fruit start offscreen.
+	* Bug: Highscore bug!
+
+11-19-2011 v0.8.5:
+	* Development: Dinamic memory allocation! No more [1000] arrays!
+	* Development: Licensed the software to GNU GPL v3
+	* Development: Greatly cleaned up the source code.
+	               Arranged the functions by name and such.
+
+11-17-2011 v0.8:
+	* Development: Added scores.h and scores.c
+	* Gameplay: Added support to change snake speed
+	* Bug: Not opening scores.bin doesn't crash the game now.
+	* Development: Cleaned and documented a lot of the code
+
+11-16-2011 v0.7.8:
+	* Development: Greatly improved the Makefile, added the dist and
+	               backup options
+	* Development Improved the installation process. Now we have support
+	              for the standard make targets.
+
+11-03-2011 v0.7.4:
+	* Development: Improved Makefile, added the VERBOSE (V) option
+	* Gameplay: Added the (beta) Highscore support
+	* Interface: Improved the GUI
+	* Gameplay: The control is now by the arrow keys - no longer `WASD`
+	* Interface: Added two command-line interfaces '--help and --version'
+
+09-10-2011 v0.5
+	* Initial release: game works.
+

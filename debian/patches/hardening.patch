@@ -1,0 +1,36 @@
+Description: Applied hardening flags to build process.
+Author: Alexandre Dantas <eu@alexdantas.net>
+Last-Update: 2014-08-01
+--- a/Makefile
++++ b/Makefile
+@@ -63,8 +63,8 @@
+ # Build info
+ EXE         = $(PACKAGE)
+ CDEBUG      = -O2
+-CXXFLAGS    = $(CDEBUG) -Wall -Wextra $(CFLAGS_PLATFORM)
+-LDFLAGS     = -lncurses $(LDFLAGS_PLATFORM)
++CXXFLAGS    += $(CDEBUG) -Wall -Wextra $(CFLAGS_PLATFORM)
++LDFLAGS     += -lncurses $(LDFLAGS_PLATFORM)
+ INCLUDESDIR = -I"src/" -I"deps/"
+ LIBSDIR     =
+ 
+@@ -147,11 +147,11 @@
+ 
+ $(EXE): $(OBJECTS) $(COMMANDER_OBJS)
+ 	# Linking...
+-	$(MUTE)$(CXX) $(OBJECTS) $(COMMANDER_OBJS) -o bin/$(EXE) $(LIBSDIR) $(LDFLAGS)
++	$(MUTE)$(CXX) $(CPPFLAGS) $(CFLAGS) $(CXXFLAGS) $(OBJECTS) $(COMMANDER_OBJS) -o bin/$(EXE) $(LIBSDIR) $(LDFLAGS)
+ 
+ src/%.o: src/%.cpp
+ 	# Compiling $<...
+-	$(MUTE)$(CXX) $(CXXFLAGS) $(CDEBUG) $< -c -o $@ $(DEFINES) $(INCLUDESDIR)
++	$(MUTE)$(CXX) $(CPPFLAGS) $(CFLAGS) $(CXXFLAGS) $(CDEBUG) $< -c -o $@ $(DEFINES) $(INCLUDESDIR)
+ 
+ dist: clean $(DISTDIR).tar.gz
+ 
+@@ -204,4 +204,4 @@
+ 
+ $(COMMANDERDIR)/commander.o: $(COMMANDERDIR)/commander.c
+ 	# Compiling $<...
+-	$(MUTE)$(CC) $(COMMANDER_CFLAGS) $< -c -o $@
++	$(MUTE)$(CC) $(CPPFLAGS) $(CFLAGS) $(COMMANDER_CFLAGS) $< -c -o $@

@@ -1,0 +1,19 @@
+Source: nsnake
+Section: games
+Priority: optional
+Maintainer: Alexandre Dantas <eu@alexdantas.net>
+Build-Depends: debhelper (>= 9), libncurses5-dev
+Standards-Version: 3.9.5
+Homepage: http://nsnake.alexdantas.net/
+Vcs-Git: git://github.com/alexdantas/nsnake.debian.git -b master
+Vcs-Browser: https://github.com/alexdantas/nsnake.debian
+
+Package: nsnake
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: classic snake game on the terminal
+ nsnake is a clone of the snake game found on old cellphones. It is
+ played on the command-line with textual interface, thanks to ncurses.
+ .
+ Features high-scores, several game modes, a GUI-like interface and
+ custom levels.

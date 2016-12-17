@@ -1,0 +1,32 @@
+nsnake (3.0.1-2) unstable; urgency=medium
+
+  * Updated maintainer mail address
+  * Cryptographic signature verification: upstream provides
+    a PGP signature to verify the tarball. Consequently:
+    - Added debian/upstream/signing-key.asc
+    - Updated debian/watch
+  * Removed desktop file and PNG/XPM icons because they're
+    already provided by upstream
+
+ -- Alexandre Dantas <eu@alexdantas.net>  Mon, 11 Aug 2014 15:48:05 -0400
+
+nsnake (3.0.1-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Alexandre Dantas <eu@alexdantas.net>  Thu, 31 Jul 2014 00:37:58 -0400
+
+nsnake (1.5-2) unstable; urgency=low
+
+  * Bumped standards version to 3.9.5
+  * Added desktop and menu files, plus icons (Closes: #737978)
+  * Fixed end-of-line error on hardening patch file (Closes: #753241)
+  * Updated VCS links on debian/control
+
+ -- Alexandre Dantas <eu@alexdantas.net>  Wed, 09 Jul 2014 23:30:23 -0400
+
+nsnake (1.5-1) unstable; urgency=low
+
+  * Initial release (Closes: #706048)
+
+ -- Alexandre Dantas <eu@alexdantas.net>  Tue, 23 Apr 2013 17:14:42 -0300

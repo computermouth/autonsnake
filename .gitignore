@@ -1,0 +1,9 @@
+
+# Object files and binary
+bin/*
+*.o
+
+# local documentation
+doc/html
+
+tmp/
